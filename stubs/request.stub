@@ -1,0 +1,32 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use App\Http\Requests\Concerns\FailedValidation;
+use App\Http\Requests\Concerns\PayloadRequestContract;
+use Illuminate\Foundation\Http\FormRequest;
+use Thuraaung\MakeFiles\Contracts\DataObjectContract;
+
+final class {{ class }} extends FormRequest implements PayloadRequestContract
+{
+    use FailedValidation;
+
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    public function rules(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public function payload(): DataObjectContract
+    {
+        //
+    }
+}
